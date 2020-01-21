@@ -21,9 +21,10 @@ class Account ():
 	def pvt_k (self, new_pvt):
 		self._pvt_k = new_pvt
 
-	def balance (self):
-		return restBalance (pub_k (self), pvt_k (self))
+	def get_balance (self):
+		return restBalance (pub_k(self), pvt_k(self))
 
 	def __str__ (self):
-		return f'Account info:\n public key-> {self._pub_k}\n private key-> {self._pvt_k}\n balance-> {balance(self)}'
+		_balance = restBalance (self._pub_k, self._pvt_k)
+		return f'Account info:\n public key-> {self._pub_k}\n private key-> {self._pvt_k}\n balance-> {_balance}'
 
